@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">Reproducibility audit snapshot</title>
+  <desc id="desc">Before and after comparison of the BERT SST-2 project remediation.</desc>
+  <rect width="1200" height="650" fill="#f6f8fa"/>
+  <text x="60" y="65" fill="#24292f" font-family="Segoe UI,Arial" font-size="32" font-weight="700">Reproducibility audit · remediation snapshot</text>
+  <text x="60" y="98" fill="#57606a" font-family="Segoe UI,Arial" font-size="17">Static review and compilation validation · 23 November 2026</text>
+  <g font-family="Segoe UI,Arial">
+    <g transform="translate(60 140)"><rect width="500" height="410" rx="12" fill="#ffffff" stroke="#d0d7de"/><rect width="500" height="58" rx="12" fill="#ffebe9"/><text x="24" y="37" fill="#cf222e" font-size="20" font-weight="700">Before</text><text x="28" y="100" fill="#24292f" font-size="16">• CPU silently selected a 500 / 100 subset</text><text x="28" y="145" fill="#24292f" font-size="16">• GPU and CPU used different batch sizes</text><text x="28" y="190" fill="#24292f" font-size="16">• Model and dataset followed mutable main</text><text x="28" y="235" fill="#24292f" font-size="16">• New runs shared historical directories</text><text x="28" y="280" fill="#24292f" font-size="16">• Softmax labeled as confidence</text><text x="28" y="325" fill="#24292f" font-size="16">• BertViz injected an external CDN script</text><text x="28" y="375" fill="#57606a" font-size="14">Historical metrics do not match notebook sample counts.</text></g>
+    <g transform="translate(640 140)"><rect width="500" height="410" rx="12" fill="#ffffff" stroke="#d0d7de"/><rect width="500" height="58" rx="12" fill="#dafbe1"/><text x="24" y="37" fill="#1a7f37" font-size="20" font-weight="700">After</text><text x="28" y="100" fill="#24292f" font-size="16">• FAST_RUN is explicit and false by default</text><text x="28" y="145" fill="#24292f" font-size="16">• Fixed batch size 16 on every device</text><text x="28" y="190" fill="#24292f" font-size="16">• Immutable source commit revisions</text><text x="28" y="235" fill="#24292f" font-size="16">• Versioned run namespace and metadata</text><text x="28" y="280" fill="#24292f" font-size="16">• Output labeled predicted probability</text><text x="28" y="325" fill="#24292f" font-size="16">• Offline static plots are authoritative</text><text x="28" y="375" fill="#57606a" font-size="14">Notebook JSON and all Python cells compile successfully.</text></g>
+  </g>
+  <rect x="60" y="585" width="1080" height="2" fill="#d0d7de"/>
+  <text x="60" y="620" fill="#57606a" font-family="Segoe UI,Arial" font-size="14">Evidence source: workspace files, checkpoint trainer state, saved model configuration, and static compilation checks.</text>
+</svg>
+
