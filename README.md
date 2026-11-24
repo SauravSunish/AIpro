@@ -1,12 +1,26 @@
-# BERT SST-2 Fine-Tuning & Multi-Head Attention Visualization
+# Academic Deep-Learning Project: BERT Fine-Tuning on SST-2
 
-This repository fine-tunes `bert-base-uncased` for binary sentiment classification on the Stanford Sentiment Treebank (SST-2) using Hugging Face `transformers` and extracts multi-layer attention weights with static heatmaps (Seaborn/Matplotlib) and interactive views (BertViz).
+This repository is an academic deep-learning project that studies transfer learning with BERT for binary sentiment classification on the Stanford Sentiment Treebank (SST-2). It fine-tunes `bert-base-uncased`, evaluates classification performance, and explores multi-head self-attention using static heatmaps and optional BertViz views.
+
+The project is intended to demonstrate the complete experimental workflow—dataset preparation, tokenization, fine-tuning, evaluation, visualization, and critical interpretation—not to present a production deployment system.
 
 ![Pipeline overview](docs/screenshots/pipeline-overview.svg)
 
 ---
 
-## 1. Prerequisites & Windows Setup
+## 1. Academic objectives
+
+- Understand how a pretrained Transformer can be adapted to a downstream classification task.
+- Implement reproducible SST-2 preprocessing and BERT fine-tuning.
+- Evaluate the classifier with accuracy, precision, recall, and F1 score.
+- Inspect attention patterns across BERT layers and heads.
+- Discuss why attention visualizations are informative but not causal explanations.
+
+The complete academic write-up is available in [docs/ACADEMIC_REPORT.md](docs/ACADEMIC_REPORT.md). The engineering audit and remediation history remains available in [docs/ANALYSIS.md](docs/ANALYSIS.md).
+
+---
+
+## 2. Prerequisites & Windows Setup
 
 > [!IMPORTANT]
 > **Python recommendation:** Python 3.12 is recommended for broad ecosystem compatibility. Current PyTorch releases also publish Python 3.14 wheels, so Python 3.14 is not inherently blocked.
@@ -38,7 +52,7 @@ python -m ipykernel install --user --name bert-sst2 --display-name "BERT SST-2 (
 
 ---
 
-## 2. Usage Options
+## 3. Running the experiment
 
 You can run this project either **interactively via Jupyter** or **headless via the CLI pipeline script**.
 
@@ -68,11 +82,11 @@ python train_and_evaluate.py --predict "The movie was absolutely fantastic, but 
 
 ---
 
-## 3. Project Architecture & Enhancements
+## 4. Experimental design
 
 - **Dynamic Padding:** Uses `DataCollatorWithPadding` to dynamically pad batches during collation, drastically reducing memory footprint compared to static dataset-wide max-length padding.
 - **Fast Training:** Disables `output_attentions` during `Trainer.train()` to eliminate multi-head gradient graph retention, then re-enables eager attention during inference.
-- **Strict Checkpoint Hygiene:** Configured with `save_total_limit=2` to prevent multi-gigabyte disk overflow.
+- **Checkpoint Control:** Retains at most two checkpoints to keep the academic experiment manageable.
 - **Explicit Label Metadata:** Maps `0 -> Negative` and `1 -> Positive` directly in model configuration.
 - **Static Heatmap Fallbacks:** Automatically plots 2D layer/head attention matrices and `[CLS]` importance bar charts without relying solely on notebook JavaScript rendering.
 - **Scientific Caveat:** Attention matrices represent internal routing pathways; they do not constitute calibrated causal importance scores.
@@ -81,5 +95,17 @@ python train_and_evaluate.py --predict "The movie was absolutely fantastic, but 
 
 Softmax values are reported as **predicted probabilities**, not calibrated confidence scores.
 
-For the complete review, evidence, limitations, and validation record, see [docs/ANALYSIS.md](docs/ANALYSIS.md).
+## 5. Results and interpretation
+
+The historical checkpoint records validation accuracy of `0.8700` and F1 of `0.8746`. These values are retained as historical evidence, but they are not claimed as results of the corrected notebook because the saved run used different sample counts. The corrected experiment should be rerun before reporting final course results.
+
+Attention plots should be discussed as observations about information routing—not proof that a particular token caused the prediction.
+
+## 6. Repository contents
+
+- `sst2_bert_attention_finetune.ipynb`: guided academic experiment.
+- `train_and_evaluate.py`: repeatable command-line version of the experiment.
+- `docs/ACADEMIC_REPORT.md`: formal project report.
+- `docs/ANALYSIS.md`: technical audit and correction record.
+- `docs/screenshots/`: visual summaries of the workflow and remediation.
 
