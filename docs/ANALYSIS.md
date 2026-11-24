@@ -71,5 +71,5 @@ Full training was not rerun during remediation because the active interpreter do
 
 ## Provenance
 
-Analysis completed on 23 November 2026. Source revisions were verified against the Hugging Face Hub. Existing binary artifacts were intentionally excluded from publication.
+Analysis completed on 24 November 2026. Source revisions were verified against the Hugging Face Hub. Existing binary artifacts were intentionally excluded from publication.
 
