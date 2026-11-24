@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">BERT SST-2 corrected pipeline overview</title>
+  <desc id="desc">A visual snapshot of the pinned dataset and model flowing through preprocessing, training, evaluation, and isolated outputs.</desc>
+  <rect width="1200" height="520" fill="#0d1117"/>
+  <text x="60" y="65" fill="#f0f6fc" font-family="Segoe UI,Arial" font-size="32" font-weight="700">BERT SST-2 · corrected pipeline</text>
+  <text x="60" y="98" fill="#8b949e" font-family="Segoe UI,Arial" font-size="17">Reproducible inputs · memory-safe training · isolated artifacts</text>
+  <g font-family="Segoe UI,Arial">
+    <g transform="translate(60 150)"><rect width="200" height="190" rx="12" fill="#161b22" stroke="#30363d"/><text x="20" y="38" fill="#58a6ff" font-size="18" font-weight="700">Pinned inputs</text><text x="20" y="75" fill="#c9d1d9" font-size="15">GLUE / SST-2</text><text x="20" y="100" fill="#8b949e" font-size="13">bcdcba79…</text><text x="20" y="135" fill="#c9d1d9" font-size="15">BERT base uncased</text><text x="20" y="160" fill="#8b949e" font-size="13">86b5e093…</text></g>
+    <text x="280" y="250" fill="#8b949e" font-size="28">→</text>
+    <g transform="translate(320 150)"><rect width="200" height="190" rx="12" fill="#161b22" stroke="#30363d"/><text x="20" y="38" fill="#58a6ff" font-size="18" font-weight="700">Preprocessing</text><text x="20" y="78" fill="#c9d1d9" font-size="15">Subset first</text><text x="20" y="108" fill="#c9d1d9" font-size="15">Dynamic padding</text><text x="20" y="138" fill="#c9d1d9" font-size="15">64-token limit</text><text x="20" y="168" fill="#c9d1d9" font-size="15">Seed 42</text></g>
+    <text x="540" y="250" fill="#8b949e" font-size="28">→</text>
+    <g transform="translate(580 150)"><rect width="200" height="190" rx="12" fill="#161b22" stroke="#30363d"/><text x="20" y="38" fill="#58a6ff" font-size="18" font-weight="700">Fine-tuning</text><text x="20" y="78" fill="#c9d1d9" font-size="15">Batch size 16</text><text x="20" y="108" fill="#c9d1d9" font-size="15">Attention disabled</text><text x="20" y="138" fill="#c9d1d9" font-size="15">F1 model selection</text><text x="20" y="168" fill="#c9d1d9" font-size="15">2 checkpoints max</text></g>
+    <text x="800" y="250" fill="#8b949e" font-size="28">→</text>
+    <g transform="translate(840 150)"><rect width="300" height="190" rx="12" fill="#161b22" stroke="#238636"/><text x="20" y="38" fill="#3fb950" font-size="18" font-weight="700">Isolated run output</text><text x="20" y="78" fill="#c9d1d9" font-size="15">runs/bert-sst2-v2/</text><text x="20" y="108" fill="#c9d1d9" font-size="15">model · checkpoints · plots</text><text x="20" y="138" fill="#c9d1d9" font-size="15">metrics · trainer state</text><text x="20" y="168" fill="#c9d1d9" font-size="15">run_metadata.json</text></g>
+  </g>
+  <rect x="60" y="390" width="1080" height="72" rx="10" fill="#161b22" stroke="#30363d"/>
+  <text x="85" y="420" fill="#f0f6fc" font-family="Segoe UI,Arial" font-size="16" font-weight="700">Visualization policy</text>
+  <text x="85" y="447" fill="#8b949e" font-family="Segoe UI,Arial" font-size="15">Static heatmaps work offline. BertViz is optional. Probabilities are not described as calibrated confidence.</text>
+</svg>
+
