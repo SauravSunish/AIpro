@@ -1,5 +1,7 @@
 # Project analysis and remediation record
 
+This audit supports an academic deep-learning project. Its purpose is to preserve experimental validity and traceability, not to impose production-deployment requirements. See [ACADEMIC_REPORT.md](ACADEMIC_REPORT.md) for the formal course-project narrative.
+
 ## Executive summary
 
 The original workspace contained a single notebook, one final model, and one training checkpoint. The saved checkpoint recorded 125 training steps and evaluation over approximately 300 examples, while the old CPU notebook selected 500 training and 100 evaluation examples. The historical F1 score of `0.8746` therefore cannot be reproduced from the old notebook configuration.
