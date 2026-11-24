@@ -62,7 +62,7 @@ python train_and_evaluate.py --train --fast
 # Full fine-tuning (all 67k samples, 2 epochs):
 python train_and_evaluate.py --train --epochs 2
 
-# Inference on a custom sentence + save attention plots to ./plots/:
+# Inference on a custom sentence + save attention plots to ./runs/bert-sst2-v2/plots/:
 python train_and_evaluate.py --predict "The movie was absolutely fantastic, but the acting was terrible." --save-plots
 ```
 
